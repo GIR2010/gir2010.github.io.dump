@@ -55,11 +55,11 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build with Gulp
-        run: npm run start pack_github
+        run: npm run start build_web
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./build/github/lampa
+          path: ./build/web
 
   # Deployment job
   deploy:

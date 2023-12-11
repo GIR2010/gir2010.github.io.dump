@@ -295,6 +295,7 @@ function pluginSourcemapPathTransform(relativeSourcePath, sourcemapPath) {
 exports.pack_webos   = series(sync_webos, uglify_task, public_webos, index_webos);
 exports.pack_tizen   = series(sync_tizen, uglify_task, public_tizen, index_tizen);
 exports.pack_github  = series(sync_github, uglify_task, public_github, index_github);
+exports.build_web = series(merge, plugins, sass_task, lang_task, sync_web, build_web);
 exports.pack_plugins = series(plugins);
 exports.test         = series(test);
 exports.default = parallel(watch, browser_sync);
